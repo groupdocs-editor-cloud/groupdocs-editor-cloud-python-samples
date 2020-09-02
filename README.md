@@ -26,7 +26,7 @@ The package contains Python examples. Follow the given steps to proceed run:
 * Execute "pip install groupdocs_editor_cloud" command
 * Run examples using "python RunExamples.py" command
 
-For more details, visit  [Getting Started](https://docs.groupdocs.cloud/display/editorcloud/Getting+Started).
+For more details, visit  [Getting Started](https://docs.groupdocs.cloud/editor/getting-started/).
 
 ## Licensing
 All GroupDocs.Editor Cloud SDKs are licensed under [MIT License](LICENSE).
