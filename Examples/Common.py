@@ -4,17 +4,23 @@ import os
 
 class Common:
 
-    # Get your app_sid and app_key at https://dashboard.groupdocs.cloud (free registration is required).
-    app_sid = None
-    app_key = None    
+    # This properties are set from main class
+    client_id = None
+    client_secret = None 
     myStorage = None
     
+    @classmethod  
+    def GetConfig(cls):
+        configuration = groupdocs_editor_cloud.Configuration(cls.client_id, cls.client_secret)
+        configuration.api_base_url = "https://api.groupdocs.cloud"
+        return configuration   
+
     @classmethod  
     def UploadSampleFiles(cls):
         
         # api initialization
-        storageApi = groupdocs_editor_cloud.StorageApi.from_keys(cls.app_sid, cls.app_key)
-        fileApi = groupdocs_editor_cloud.FileApi.from_keys(cls.app_sid, cls.app_key)
+        storageApi = groupdocs_editor_cloud.StorageApi.from_config(cls.GetConfig())
+        fileApi = groupdocs_editor_cloud.FileApi.from_config(cls.GetConfig())
 
         # upload sample files
         for filename in glob.iglob("Resources/**/*.*", recursive=True):

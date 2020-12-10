@@ -7,8 +7,8 @@ class EditSpreadsheetDocument:
     @classmethod  
     def Run(cls):
         # Create necessary API instances
-        editApi = groupdocs_editor_cloud.EditApi.from_keys(Common.app_sid, Common.app_key)
-        fileApi = groupdocs_editor_cloud.FileApi.from_keys(Common.app_sid, Common.app_key)
+        editApi = groupdocs_editor_cloud.EditApi.from_config(Common.GetConfig())
+        fileApi = groupdocs_editor_cloud.FileApi.from_config(Common.GetConfig())
 
         # The document already uploaded into the storage.
         # Load it into editable state
